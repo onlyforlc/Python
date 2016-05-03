@@ -40,11 +40,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        if len(nums) <= 1:
-            return False
-        buff_dict = {}
+        temp_dict = {}
         for i in range(len(nums)):
-            if nums[i] in buff_dict:
-                return [buff_dict[nums[i]], i+1]
-            else:
-                buff_dict[target - nums[i]] = i+1
+            if nums[i] in temp_dict:
+                return [temp_dict[nums[i]], i]
+            temp_dict[target-nums[i]] = i
+            
+            
